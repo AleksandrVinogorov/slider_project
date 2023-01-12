@@ -892,7 +892,7 @@ h2 {
 .mobile-form-btn {
     display: none;
 }
-@media (max-width:  960px) {
+@media (max-width:  1280px) {
     .form-btn {
         display: none;
     }
@@ -1833,6 +1833,7 @@ h2 {
     justify-content: center;
     margin-top: -424px;
     width: 100%;
+    overflow: hidden;
 }
 @media (max-width: 650px) {
     .pre-footer__backround {
