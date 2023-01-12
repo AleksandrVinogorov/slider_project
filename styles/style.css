@@ -892,7 +892,7 @@ h2 {
 .mobile-form-btn {
     display: none;
 }
-@media (max-width:  1280px) {
+@media (max-width: 960px) {
     .form-btn {
         display: none;
     }
