@@ -708,7 +708,7 @@ button {
     background-color: #FFFFFF;
     transition: .2s ease;
     opacity: 1;
-    animation: fadeInFromNone 0.2s ease;
+    animation: fadeInFromNone 0.5s ease;
 }
 .page__slider {
     display: flex;

@@ -99,7 +99,7 @@ toggleItmes.forEach((dot, index) => {
     })
 })
 
-btnNext.onclick = function () {
+setInterval(btnNext.onclick = function () {
     console.log('next slide');
     // скрываем текущий слайд
     const currentSlide = slider.querySelector('[data-active]');
@@ -119,7 +119,8 @@ btnNext.onclick = function () {
 
     toggleItmes.forEach(opt => opt.classList.remove('toggle-active'))
     toggleItmes[nextSlideIndex].classList.add('toggle-active');
-}
+}, 3000
+)
 
 btnPrev.onclick = function () {
     console.log('next slide');
