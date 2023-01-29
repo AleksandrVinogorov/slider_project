@@ -26,6 +26,11 @@ h2 {
 button {
     cursor: pointer;
 }
+.hidden {
+    display: none;
+    opacity: 0;
+    background-color: #FFFFFF;
+}
 .header {
     position: sticky;
     top:0;
@@ -93,35 +98,28 @@ button {
         display: none;
     }
 }
-.first-option {
+.option-list button {
     color: rgba(255, 255, 255, 0.3);
-    text-decoration: none;
-    padding-bottom: 7px;
+    background-color: transparent;
+    border: 0;
+    text-align: start;
+    padding: 0;
+    font-size: 14px;
+    font-family: 'Yeseva One';
+    line-height: 19px;
+    text-transform: uppercase;
+
 }
-.first-option:hover {
+.option-active {
     color: #E3B873;
-    transition: 0.5s;
     border-bottom: 2px solid #E3B873;
-}
-.second-option {
-    color: rgba(255, 255, 255, 0.3);
-    text-decoration: none;
     padding-bottom: 7px;
-}
-.second-option:hover {
-    color: #E3B873;
     transition: 0.5s;
 }
-.third-option {
-    color: rgba(255, 255, 255, 0.3);
-    text-decoration: none;
-    padding-bottom: 7px;
-}
-.third-option:hover {
+.option-list button span:hover {
     color: #E3B873;
-    transition: 0.5s;
-    border-bottom: 2px solid #E3B873;
 }
+
 .header__nav-items li {
     line-height: 0;
 }
@@ -525,7 +523,6 @@ button {
     width: 380px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
     margin: 28px 0;
 }
 @media (max-width: 960px) {
@@ -588,7 +585,10 @@ button {
     display: flex;
     justify-content: space-around;
 }
-.toggle{
+.toggle-container {
+    display: flex;
+}
+.toggle {
     border: none;
     background-color: rgba(0,0,0,0);
     margin: 0 9px;
@@ -602,8 +602,10 @@ button {
     transition: .3s;
 }
 .toggle:hover {
-    background-color: #FFFFFF;
-    
+    background-color: #FFFFFF;   
+}
+.toggle-active {
+    background-color: #FFFFFF;   
 }
 .select-arr-left {
     background-image: url(/img/arrow-left.svg);
@@ -618,7 +620,6 @@ button {
     outline: none;
 }
 .select-arr-right {
-    
     background-image: url(/img/arrow-right.svg);
     border: none;
     background-color: rgba(0,0,0,0);
@@ -629,6 +630,18 @@ button {
     width: 42px;
     height: 14px;
     outline: none;
+}
+.select-arr-right:hover {
+    transition: 0.2s ease;
+    background-color: #ffffff3a;
+    box-shadow: 0px 0px 10px 8px #ffffff3a;
+    border-radius: 30%;
+}
+.select-arr-left:hover {
+    transition: 0.2s ease;
+    background-color: #ffffff3a;
+    box-shadow: 0px 0px 10px 8px #ffffff3a;
+    border-radius: 30%;
 }
 .characteristics-container__city {
     margin-top: 17px;
@@ -674,7 +687,39 @@ button {
 }
 .interior-image {
     width: 100%;
-    margin: 14px 0px;
+}
+@keyframes fadeInFromNone {
+    0% {
+      display: none;
+      opacity: 0;
+    }
+  
+    1% {
+      display: block;
+      opacity: 0;
+    }
+  
+    100% {
+      display: block;
+      opacity: 1;
+    }
+  }
+[data-active] {
+    background-color: #FFFFFF;
+    transition: .2s ease;
+    opacity: 1;
+    animation: fadeInFromNone 0.2s ease;
+}
+.page__slider {
+    display: flex;
+    overflow-x: hidden;
+    background-color: #ffffff9c;
+    margin-top: 27px;
+    max-height: 482px;
+    max-width: 679px;
+}
+.show {
+    display: block;
 }
 
 /* Секция video-presentation */
@@ -1766,6 +1811,7 @@ button {
     color: #FFFFFF;
 }
 
+
 input:focus::-webkit-input-placeholder {
     color: transparent;
 }
@@ -1920,7 +1966,7 @@ input:focus::-webkit-input-placeholder {
     position: absolute;
     width: 100%;
     max-height: 954px;
-    margin-top: 373px;
+    margin-top: 225px;
     z-index: -1;
     background-repeat: no-repeat;
     background-size: cover;

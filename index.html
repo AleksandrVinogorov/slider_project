@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Веб-верстка</title>
     <link rel="stylesheet" href="/styles/style.css">
+    <script defer src="./js/slider.js"></script>
 </head>
 <body>
     <header class="header">
@@ -85,20 +86,26 @@
                 <div class="page__select">
                     <div class="page__select-points">
                         <button class="select-arr-left" type="button"></button>
-                        <button class="toggle" type="button"></button>
-                        <button class="toggle" type="button"></button>
-                        <button class="toggle" type="button"></button>
+                        <div class="toggle-container">
+                            <button class="toggle" type="button"></button>
+                            <button class="toggle" type="button"></button>
+                            <button class="toggle" type="button"></button>
+                        </div>
                         <button class="select-arr-right" type="button"></button>
                     </div>
                 </div>
             </div>
             <div class="page__container-options" >
-                <ul class="option-list">
-                    <li><a class="first-option" href="">Rostov-on-Don, Admiral</a></li>
-                    <li><a class="second-option" href="">Sochi Thieves</a></li>
-                    <li><a class="third-option" href="">Rostov-on-Don Patriotic</a></li>
-                </ul>
-                <img src="/img/interior.jpg" alt="interior" class="interior-image">
+                <div class="option-list">
+                    <button><span class="option">Rostov-on-Don, Admiral</span></button>
+                    <button><span class="option">Sochi Thieves</span></button>
+                    <button><span class="option">Rostov-on-Don Patriotic</span></button>
+                </div>
+                <div class="page__slider" id="slider">
+                    <img src="/img/interior.jpg" alt="slide" class="interior-image">
+                    <img src="/img/interior-1.jpg" alt="slide" class="interior-image">
+                    <img src="/img/interior-2.jpg" alt="slide" class="interior-image">
+                </div>
             </div>
         </div>
     </section>
