@@ -111,7 +111,6 @@ button {
 .second-option:hover {
     color: #E3B873;
     transition: 0.5s;
-    border-bottom: 2px solid #E3B873;
 }
 .third-option {
     color: rgba(255, 255, 255, 0.3);
